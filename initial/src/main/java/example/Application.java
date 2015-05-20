@@ -31,7 +31,7 @@ public class Application {
         }
     }
 
-    @Autowired
+    /*@Autowired
     JdbcTemplate jdbcTemplate;
 
     @Override
@@ -64,6 +64,6 @@ public class Application {
         for (Customer customer : results) {
             System.out.println(customer);
         }
-    }
+    }*/
 
 }
