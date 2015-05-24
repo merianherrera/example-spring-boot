@@ -17,8 +17,8 @@ public class CustomerController {
     @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
     public Customer greetings(@PathVariable("id") Long id) {
         Customer customer = new Customer();
-        customer.setName("Merian");
-        customer.setLastname("Herrera");
+        customer.setName("Martha");
+        customer.setLastname("Fuentes");
         return customer;
     }
 
