@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Users | UTN</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+</head>
+<body>
+	<div class="col s12">
+		<div class="row">
+			<nav>
+		    	<div class="nav-wrapper">
+			      	<a href="#" class="brand-logo">UTN</a>
+			      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			        	<li><a href="sass.html">Usuarios</a></li>
+			        	<li><a href="components.html">Acerca</a></li>
+			        	<li><a href="javascript.html">Contactenos</a></li>
+			      	</ul>
+		    	</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col s6">
+				<div class="col s9">
+					<div class="row">
+						<table>
+						  <tr>
+						    <th>Nombre</th>
+						    <th>Apellido</th>
+						    <th>Email</th>
+						  </tr>
+						  <tr th:each="user : ${users}">
+						    <td th:text="${users.name}">Onions</td>
+						    <td th:text="${users.last_name}">2.41</td>
+						    <td th:text="${users.email}">yes</td>
+						  </tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
