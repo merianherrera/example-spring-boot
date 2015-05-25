@@ -1,0 +1,16 @@
+package example.controllers;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class CustomerRowMapper implements RowMapper {
+
+    @Override
+    public Object mapRow(ResultSet rs, int line) throws SQLException {
+        CustomerResultSetExtractor extractor = new CustomerResultSetExtractor();
+        return extractor.extractData(rs);
+    }
+
+}

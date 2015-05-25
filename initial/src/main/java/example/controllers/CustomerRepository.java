@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import example.controllers.Customer.*;
+//import example.controllers.CustomerMapper.*;
 
 @Repository
 public class CustomerRepository {
@@ -23,7 +24,7 @@ public class CustomerRepository {
     protected JdbcTemplate jdbc;
 
     public Customer getCustomer(long id) {
-        return jdbc.queryForObject("SELECT * FROM customer WHERE id=?", CustomerMapper, id);
+        //return jdbc.queryForObject("SELECT * FROM customer WHERE id=?", CustomerRowMapper, id);
     }
 
     public List<Customer> getCustomers() {
