@@ -5,26 +5,34 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
+import example.controllers.Customer.*;
+import example.controllers.CustomerRepository.*;
+
 @RestController("Customer")
 public class CustomerController {
+
+    @Autowired
+    private CustomerRepository customers;
 
 
     @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
     public Customer greetings(@PathVariable("id") Long id) {
-        Customer customer = new Customer();
+        /*Customer customer = new Customer();
         customer.setName("Martha");
         customer.setLastname("Fuentes");
-        return customer;
+        return customer;*/
+        return customers.getCustomer(id);
     }
 
     @RequestMapping(value = "/customer", method = RequestMethod.GET)
     public List<Customer> list() {
-        return Collections.emptyList();
+        /*return Collections.emptyList();*/
+        return customers.getCustomers();
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -42,7 +50,7 @@ public class CustomerController {
 
     }
 
-    public class Customer implements Serializable {
+   /* public class Customer implements Serializable {
 
         private String name;
 
@@ -63,5 +71,5 @@ public class CustomerController {
         public String getLastname() {
             return lastname;
         }
-    }
+    }*/
 }

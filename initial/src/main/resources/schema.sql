@@ -1,1 +1,1 @@
-create table customers(id bigint, first_name varchar(255), last_name varchar(255));
+create table customer (id bigint, first_name varchar(255), last_name varchar(255));
