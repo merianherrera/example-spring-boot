@@ -1,6 +1,6 @@
 package example.controllers;
 
-import example.dao.CustomerRepository;
+import example.dao.CustomerDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,10 @@ import example.models.Customer;
 public class CustomerController {
 
     @Autowired
-    private CustomerRepository customers;
+    private CustomerDao customers;
 
 
     @RequestMapping("/customer/{id}")
-    //public String ver(@PathVariable("id") Long id) {
     public String ver(@PathVariable("id") Long id, Model model) {
         Customer customerData = customers.getCustomer(id);
         model.addAttribute("customer", customerData);
