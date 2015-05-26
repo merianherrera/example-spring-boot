@@ -1,17 +1,16 @@
 package example.controllers;
 
+import example.dao.CustomerRepository;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.io.Serializable;
-import java.util.Collections;
+
 import java.util.List;
 
-import example.controllers.Customer.*;
-import example.controllers.CustomerRepository.*;
+import example.models.Customer;
 
 @RestController("Customer")
 public class CustomerController {
