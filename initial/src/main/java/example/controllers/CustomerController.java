@@ -1,18 +1,19 @@
 package example.controllers;
 
 import example.dao.CustomerRepository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
+import org.springframework.ui.Model;
 import example.models.Customer;
 
-@RestController("Customer")
+//@RestController("Customer")
+@Controller
 public class CustomerController {
 
     @Autowired
@@ -28,10 +29,12 @@ public class CustomerController {
         return customers.getCustomer(id);
     }
 
-    @RequestMapping(value = "/customer", method = RequestMethod.GET)
-    public List<Customer> list() {
-        /*return Collections.emptyList();*/
-        return customers.getCustomers();
+    //@RequestMapping(value = "/customer", method = RequestMethod.GET)
+    @RequestMapping("/customer")
+    public String listar(Model model) {
+        List<Customer> allCostumers = customers.getCustomers();
+        model.addAttribute("customers", allCostumers);
+        return "customer/listar";
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -48,27 +51,4 @@ public class CustomerController {
     public void delete() {
 
     }
-
-   /* public class Customer implements Serializable {
-
-        private String name;
-
-        private String lastname;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setLastname(String lastname) {
-            this.lastname = lastname;
-        }
-
-        public String getLastname() {
-            return lastname;
-        }
-    }*/
 }
