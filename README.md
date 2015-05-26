@@ -4,20 +4,20 @@ Proyecto elaborado para el curso de Desarrollo de aplicaciones web utilizando so
 
 ## Pre-requisitos:
 #### 1. JDK 1.7 o posterior
-  a. Instalar el JDK desde la terminal
+  * Instalar el JDK desde la terminal
     ```shell
       sudo apt-get install openjdk-7-jdk
       apt-cache search jdk
     ```
-  b. Configurar las variables de entorno
+  * Configurar las variables de entorno
     ```shell
       export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
       export PATH=$PATH:/usr/lib/jvm/java-7-openjdk/bin
-  ```
-  c. Comprobar la instalacion de JDK
+    ```
+  * Comprobar la instalacion de JDK
     ```shell
       javac
-  ```
+    ```
 
 #### 2. Maven 3.0
 
