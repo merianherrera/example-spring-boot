@@ -11,6 +11,11 @@ Proyecto elaborado para el curso de Desarrollo de aplicaciones web utilizando so
     sudo apt-get install openjdk-7-jdk
     apt-cache search jdk
 ```
+Nota: **apt-cache** realiza una serie de operaciones sobre la cache (registro o
+       lista) de paquetes de APT.  apt-cache no modifica el estado del sistema
+       pero proporciona operaciones de busqueda y genera informacion
+       interesante a partir de los metadatos del paquete.
+<br />      
   **b. Configurar las variables de entorno**<br />
           **- JAVA_HOME:** El directorio de instalación de Java.<br />
           **- PATH:** Las rutas donde se encuentran los archivos ejecutables. Para definir la variable PATH, se necesita dar la ruta absoluta del directorio de instalación del jdk, y agregar la carpeta bin, que es donde se encuentran los ejecutables como javac y java.
