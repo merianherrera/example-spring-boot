@@ -16,6 +16,17 @@ public class CustomerController {
     @Autowired
     private CustomerDao customers;
 
+    @RequestMapping("/customer/guardar")
+    public String guardar(Model model) {
+        return "customer/guardar";
+    }
+
+    @RequestMapping("/customer/editar/{id}")
+    public String editar(@PathVariable("id") Long id, Model model) {
+        Customer customerData = customers.getCustomer(id);
+        model.addAttribute("customer", customerData);
+        return "customer/editar";
+    }
 
     @RequestMapping("/customer/{id}")
     public String ver(@PathVariable("id") Long id, Model model) {
@@ -30,11 +41,6 @@ public class CustomerController {
         List<Customer> allCustumers = customers.getCustomers();
         model.addAttribute("customers", allCustumers);
         return "customer/listar";
-    }
-
-    @RequestMapping("/customer/guardar")
-    public String guardar(Model model) {
-        return "customer/guardar";
     }
 
     @RequestMapping("/customer/add")
