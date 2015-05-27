@@ -5,20 +5,20 @@ Proyecto elaborado para el curso de Desarrollo de aplicaciones web utilizando so
 ## Pre-requisitos:
 #### 1. JDK 1.7 o posterior
   **a. Instalar el JDK desde la terminal**<br />
-          ** - JDK** (Java Development Kit): conjunto de herramientas (programas y librerías) que permiten desarrollar (compilar, ejecutar, generar documentación, etc.) programas en lenguaje Java.
+          **- JDK** (Java Development Kit): conjunto de herramientas (programas y librerías) que permiten desarrollar (compilar, ejecutar, generar documentación, etc.) programas en lenguaje Java.
           
 ```
     sudo apt-get install openjdk-7-jdk
     apt-cache search jdk
 ```
   **b. Configurar las variables de entorno**<br />
-          ** - JAVA_HOME:** El directorio de instalación de Java.<br />
-          ** - PATH:** Las rutas donde se encuentran los archivos ejecutables. Para definir la variable PATH, se necesita dar la ruta absoluta del directorio de instalación del jdk, y agregar la carpeta bin, que es donde se encuentran los ejecutables como javac y java.
+          **- JAVA_HOME:** El directorio de instalación de Java.<br />
+          **- PATH:** Las rutas donde se encuentran los archivos ejecutables. Para definir la variable PATH, se necesita dar la ruta absoluta del directorio de instalación del jdk, y agregar la carpeta bin, que es donde se encuentran los ejecutables como javac y java.
 ```
    export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
    export PATH=$PATH:/usr/lib/jvm/java-7-openjdk/bin
 ```
-  * Comprobar la instalación de JDK
+  **c. Comprobar la instalación de JDK**
 ```
     javac
 ```
