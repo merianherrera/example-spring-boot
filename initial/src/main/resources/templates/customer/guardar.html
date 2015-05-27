@@ -29,17 +29,17 @@
 				<form class="col s12" action="#" th:action="@{/customer/add}" th:object="${customer}" method="post">
                     <div class="row">
 						<div class="input-field col s12">
-							<input id="id" type="number"  th:field="${id}" class="validate" placeholder="ID" ></input>
+							<input id="id" type="number"  class="validate" placeholder="ID" ></input>
 							<label for="id">ID:</label>
 						</div>
 
                         <div class="input-field col s12">
-                          <input id="name" type="text" th:field="${name}" class="validate" placeholder="Nombre"></input>
+                          <input id="name" type="text" class="validate" placeholder="Nombre"></input>
                           <label for="name">Nombre:</label>
                         </div>
 
                        <div class="input-field col s12">
-                          <input id="lastname" type="text" th:field="${lastname}" class="validate" placeholder="Apellido"></input>
+                          <input id="lastname" type="text" class="validate" placeholder="Apellido"></input>
                           <label for="lastname">Apellido:</label>
                         </div>
                         <div class="input-field col s6">
