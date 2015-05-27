@@ -48,13 +48,23 @@ public class CustomerController {
         return "customer/listar";
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public void update(@RequestBody Customer customer) {
 
+    @RequestMapping("/customer/update")
+    public String update(@RequestParam(value="id", required=true) long id,
+                      @RequestParam(value="name", required=true) String name,
+                      @RequestParam(value="lastname", required=true) String lastname, Model model) {
+
+        customers.updateCustomer(id, name, lastname);
+        List<Customer> allCustumers = customers.getCustomers();
+        model.addAttribute("customers", allCustumers);
+        return "customer/listar";
     }
 
-    @RequestMapping(value = "/customer/{id}", method = RequestMethod.DELETE)
-    public void delete() {
-
+    @RequestMapping("/customer/delete/{id}")
+    public String delete(@PathVariable("id") Long id, Model model) {
+        customers.deleteCustomer(id);
+        List<Customer> allCustumers = customers.getCustomers();
+        model.addAttribute("customers", allCustumers);
+        return "customer/listar";
     }
 }

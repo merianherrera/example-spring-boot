@@ -29,6 +29,16 @@ public class CustomerDao {
         return jdbc.update("INSERT INTO customer(id, name, lastname) VALUES(?, ?, ?)", id, name, lastname);
     }
 
+    public int updateCustomer(long id, String name, String lastname) {
+
+        return jdbc.update("UPDATE customer SET name=?, lastname=? WHERE id=?", name, lastname, id);
+    }
+
+    public int deleteCustomer(long id) {
+
+        return jdbc.update("DELETE FROM customer WHERE id=?", id);
+    }
+
     private static final RowMapper<Customer> CustomerMapper = new RowMapper<Customer>() {
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
             Customer customer = new Customer(rs.getLong("id"), rs.getString("name"), rs.getString("lastname"));
