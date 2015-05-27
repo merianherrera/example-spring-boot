@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import org.springframework.ui.Model;
 import example.models.Customer;
+import org.springframework.validation.BindingResult;
 
 //@RestController("Customer")
 @Controller
@@ -31,9 +32,20 @@ public class CustomerController {
         return "customer/listar";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void add(@RequestBody Customer customer) {
+    @RequestMapping("/customer/guardar")
+    public String guardar(Model model) {
+        return "customer/guardar";
+    }
 
+    @RequestMapping("/customer/add")
+    public String add(@RequestParam(value="id", required=true) long id,
+            @RequestParam(value="name", required=true) String name,
+                      @RequestParam(value="lastname", required=true) String lastname, Model model) {
+
+        customers.addCustomers(id, name, lastname);
+        List<Customer> allCustumers = customers.getCustomers();
+        model.addAttribute("customers", allCustumers);
+        return "customer/listar";
     }
 
     @RequestMapping(method = RequestMethod.PUT)

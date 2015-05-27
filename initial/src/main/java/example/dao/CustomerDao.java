@@ -24,9 +24,9 @@ public class CustomerDao {
         return jdbc.query("SELECT * FROM customer", CustomerMapper);
     }
 
-    public String addCustomers(long id, String name, String lastname) {
-        jdbc.query("INSERT INTO customer(id, name, lastname) values(?, ?, ?)", CustomerMapper, id, name, lastname);
-        return "Sus datos fueron guardados exitosamente!";
+    public int addCustomers(long id, String name, String lastname) {
+
+        return jdbc.update("INSERT INTO customer(id, name, lastname) VALUES(?, ?, ?)", id, name, lastname);
     }
 
     private static final RowMapper<Customer> CustomerMapper = new RowMapper<Customer>() {
