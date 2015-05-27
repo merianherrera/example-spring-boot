@@ -5,26 +5,26 @@ Proyecto elaborado para el curso de Desarrollo de aplicaciones web utilizando so
 ## Pre-requisitos:
 #### 1. JDK 1.7 o posterior
   * Instalar el JDK desde la terminal
-    ```
-        sudo apt-get install openjdk-7-jdk
-        apt-cache search jdk
-    ```
+```
+    sudo apt-get install openjdk-7-jdk
+    apt-cache search jdk
+```
   * Configurar las variables de entorno
-    ```
-        export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
-        export PATH=$PATH:/usr/lib/jvm/java-7-openjdk/bin
-    ```
+```
+   export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+   export PATH=$PATH:/usr/lib/jvm/java-7-openjdk/bin
+```
   * Comprobar la instalación de JDK
-    ```
-        javac
-    ```
+```
+    javac
+```
 
 #### 2. Maven 3.0
  * Instalar Maven desde la terminal
-    ```
-        sudo apt-get update
-        sudo apt-get install maven
-    ```
+```
+    sudo apt-get update
+    sudo apt-get install maven
+```
 
 ## Instalación
 1. Clonar el repositorio.
