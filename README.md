@@ -29,7 +29,7 @@ Nota: **apt-cache** realiza una serie de operaciones sobre la cache (registro o
 ```
 
 #### 2. Maven 3.0
- **a. Instalar Maven desde la terminal**
+ **a. Instalar Maven desde la terminal**<br />
     **-Maven:** es una herramienta open source para administrar proyectos de software. Por administrar, nos referimos a gestionar el ciclo de vida desde la creación de un proyecto en un lenguaje dado, hasta la generación de un binario que pueda distribuirse con el proyecto. 
 ```
     sudo apt-get update
